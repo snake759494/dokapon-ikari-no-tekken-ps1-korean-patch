@@ -15,7 +15,7 @@ PS1 일본판 **ドカポン！怒りの鉄剣 (도카폰! 분노의 철검, SLP
 | 원본 BIN 크기 | 219,563,904 바이트 |
 | 원본 BIN MD5 | `de9a5e3cd33a7863ca6470014a17c074` |
 | 원본 BIN SHA-256 | `99eba7cf5c261a4102a1bfd118bb9e827253806f78d67fc4b8b4a6e9fd934232` |
-| xdelta SHA-256 | `7337213393f2b7023c89e4b4d2933e2f7eeb062d64b946ad3bfa13f6ff6ad379` |
+| xdelta SHA-256 | `a6eafd8e7c3dbb9a35a904a493bfcb6a720ea7962b4ba6edb735fc6fb69a4e19` |
 | 결과 BIN 크기 | 219,563,904 바이트 |
 | 결과 BIN SHA-256 | `3bce6a8445424f141a75261be39eb26af861b1d6b3ef0be257b4588cf2ae6e3c` |
 
