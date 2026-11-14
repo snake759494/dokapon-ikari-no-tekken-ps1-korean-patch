@@ -5,8 +5,8 @@ PS1 일본판 **ドカポン！怒りの鉄剣 (도카폰! 분노의 철검, SLP
 ## 적용 방법
 1. 아래 해시와 일치하는 **원본 `.bin`/`.cue`** (Redump 형식 Rev 2, 트랙 1개)를 준비합니다. (CHD·PBP·ECM 등으로 변환한 이미지에는 적용할 수 없습니다.)
    - PowerShell: `Get-FileHash -Algorithm MD5 -LiteralPath '.\Dokapon! Ikari no Tekken (Japan) (Rev 2).bin'`
-2. xdeltaUI 같은 도구로 원본 `.bin` 에 `Dokapon_Ikari_no_Tekken_KO_v1.0.xdelta` 를 적용합니다. (Patch = xdelta, Source File = 원본 BIN, Output File = 새 파일명)
-   - 명령줄: `xdelta3 -d -s "Dokapon! Ikari no Tekken (Japan) (Rev 2).bin" Dokapon_Ikari_no_Tekken_KO_v1.0.xdelta "Dokapon! Ikari no Tekken (Korean).bin"`
+2. xdeltaUI 같은 도구로 원본 `.bin` 에 `Dokapon_Ikari_no_Tekken_KO_v1.1.xdelta` 를 적용합니다. (Patch = xdelta, Source File = 원본 BIN, Output File = 새 파일명)
+   - 명령줄: `xdelta3 -d -s "Dokapon! Ikari no Tekken (Japan) (Rev 2).bin" Dokapon_Ikari_no_Tekken_KO_v1.1.xdelta "Dokapon! Ikari no Tekken (Korean).bin"`
 3. 원본 `.cue` 를 복사해 이름을 바꾸고, 안의 `FILE "..."` 줄을 새 `.bin` 파일명으로 고칩니다.
 4. 만들어진 `.cue` 를 DuckStation 등 PS1 에뮬레이터나 ODE 장치에서 실행합니다.
 
@@ -17,7 +17,7 @@ PS1 일본판 **ドカポン！怒りの鉄剣 (도카폰! 분노의 철검, SLP
 | 원본 BIN SHA-256 | `99eba7cf5c261a4102a1bfd118bb9e827253806f78d67fc4b8b4a6e9fd934232` |
 | xdelta SHA-256 | `7337213393f2b7023c89e4b4d2933e2f7eeb062d64b946ad3bfa13f6ff6ad379` |
 | 결과 BIN 크기 | 219,563,904 바이트 |
-| 결과 BIN SHA-256 | `a97be8b56636daeecc766cb16eabb66de103e4671807b4f3ce50ca589305a6ad` |
+| 결과 BIN SHA-256 | `3bce6a8445424f141a75261be39eb26af861b1d6b3ef0be257b4588cf2ae6e3c` |
 
 ## 주의
 - 원본에서 만든 **상태저장(세이브 스테이트)** 은 불러오지 마세요. 글꼴 배치가 달라 글자가 깨집니다. 메모리 카드 세이브는 그대로 쓸 수 있습니다.

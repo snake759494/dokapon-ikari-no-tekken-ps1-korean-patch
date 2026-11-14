@@ -133,12 +133,18 @@ font[FB+GLYPH_OFF:FB+GLYPH_OFF+len(gl)]=gl
 exe=F('SLPS_015.59')
 def eoff(a): return a-0x80024bc0+0x800
 HOOK=0x800254f0
+# 원본 글꼴 텍스처의 가나 칸(0x160~0x1ff)은 한글 글리프에 덮이고, 런타임 글꼴 버퍼에도 여유가 없다.
+# 일본판 세이브의 CPU·와루사·플레이어 이름 같은 가나는 비슷한 한글 음절로 바꿔 그린다(히라가나·가타카나 같은 순서).
+KANA0=0x160
+KTXT='아이우에오카키쿠케코사시스세소타치츠테토나니누네노하히후헤호마미무메모야유요라리루레로와오응아이우에오－야유요가기구게고자지즈제조다지즈데도바비부베보파피푸페포'
+KTAB=HOOK+0x400
 hook=f'''
  sltiu $t0,$a2,0x200
- bnez $t0,done
+ bnez $t0,low
  addiu $t0,$zero,{SPACE:#x}
  beq $a2,$t0,space
  nop
+han:
  lw $t1,0x26c($gp)
  addiu $t2,$a2,{-GBASE}
  sll $t2,$t2,5
@@ -183,10 +189,24 @@ space:
  addiu $s3,$zero,1
  j 0x80052088
  nop
+low:
+ sltiu $t0,$a2,{KANA0:#x}
+ bnez $t0,done
+ lui $t9,{KTAB>>16:#x}
+ ori $t9,$t9,{KTAB&0xffff:#x}
+ addiu $t2,$a2,{-KANA0}
+ sll $t2,$t2,1
+ addu $t2,$t2,$t9
+ j han
+ lhu $a2,0($t2)
 '''
 code=asm(hook,HOOK)
 assert len(code)<0x5d0
 exe[eoff(HOOK):eoff(HOOK)+len(code)]=code
+assert len(code)<=KTAB-HOOK
+kt=struct.pack('<160H',*[ENC[c] for c in KTXT*2])
+assert KTAB-HOOK+len(kt)<0x5d0
+exe[eoff(KTAB):eoff(KTAB)+len(kt)]=kt
 exe[eoff(0x80052030):eoff(0x80052030)+8]=asm('jal %#x; nop'%HOOK,0x80052030)
 import gfx; gfx.apply(F)
 # ---------- 디스크 ----------

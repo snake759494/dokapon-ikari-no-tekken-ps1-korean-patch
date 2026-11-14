@@ -12,4 +12,4 @@
 2. 원문 추출: `python tools/extract_text.py` → `text/ja.json`, 번역 입력 `text/in/*.tsv`
 3. 번역: `text/ko/*.tsv` (`id<TAB>한국어`, `docs/TRANSLATION_GUIDE.md`), 검사 `python tools/ko.py text/ko/*.tsv` → `오류 0`
 4. 빌드: `python build.py` → 상위 폴더에 `Dokapon! Ikari no Tekken (Japan) (Rev 2) [KR].bin` (로그는 `build.log`)
-5. 차분 파일: `xdelta3 -e -0 -s "Dokapon! Ikari no Tekken (Japan) (Rev 2).bin" "Dokapon! Ikari no Tekken (Japan) (Rev 2) [KR].bin" Dokapon_Ikari_no_Tekken_KO_v1.0.xdelta`
+5. 차분 파일: `xdelta3 -e -0 -s "Dokapon! Ikari no Tekken (Japan) (Rev 2).bin" "Dokapon! Ikari no Tekken (Japan) (Rev 2) [KR].bin" Dokapon_Ikari_no_Tekken_KO_v1.1.xdelta`

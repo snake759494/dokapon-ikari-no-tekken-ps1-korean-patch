@@ -30,7 +30,7 @@ def width_lines(s):
     return pages
 def check(ja,ko,cap,w):
     errs=[]
-    if re.search(r'[぀-ヿ一-鿿]',ko): errs.append('일본어 문자 포함')
+    if re.search(r'[぀-ヺー-ヿ一-鿿]',ko): errs.append('일본어 문자 포함')
     # {81xx}(문자열 삽입)의 xx는 칸 폭이라 넓혀도 된다 → 종류만 비교
     nm=lambda c:c[:3]+'..}' if c[:3] in ('{81','{80') and c[3:5]!='ff' else c
     cj=[nm(c) for c in codes(ja) if c not in ('{9300}','{9400}')]
