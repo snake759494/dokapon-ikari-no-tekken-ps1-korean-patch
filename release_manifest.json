@@ -1,0 +1,11 @@
+{
+ "version": "v1.0",
+ "asset": "Dokapon_Ikari_no_Tekken_KO_v1.0.xdelta",
+ "asset_size": 266237,
+ "asset_sha256": "7337213393f2b7023c89e4b4d2933e2f7eeb062d64b946ad3bfa13f6ff6ad379",
+ "source_bin_size": 219563904,
+ "source_bin_md5": "de9a5e3cd33a7863ca6470014a17c074",
+ "source_bin_sha256": "99eba7cf5c261a4102a1bfd118bb9e827253806f78d67fc4b8b4a6e9fd934232",
+ "result_bin_size": 219563904,
+ "result_bin_sha256": "a97be8b56636daeecc766cb16eabb66de103e4671807b4f3ce50ca589305a6ad"
+}
