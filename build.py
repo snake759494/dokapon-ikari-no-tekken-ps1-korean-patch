@@ -92,6 +92,14 @@ for k,v in KO.items():
         print('OVER',k,len(data),cap,file=log); data=data[:cap-2]+b'\xff\xff'
     b[off:off+len(data)]=data
 
+# 문자열처럼 보이지만 실제로는 게임 데이터인 영역 — 절대 덮어쓰면 안 됨
+# B_END.BIN:fdf4 = 캐릭터별 레벨업 보너스 능력치 표(2바이트×캐릭터, ff=무작위)
+GUARD=[('BATTLE/B_END.BIN',0xfdf4,0xfe04)]
+for k in KO:
+    path,off=k.rsplit(':',1);off=int(off,16)
+    for gp,a,b in GUARD:
+        assert not(path==gp and off<b and off+J[k]['cap']*2>a),('데이터 영역 번역 금지',k)
+
 def grid(chars):
     out=[0x9300]
     for r in range(9):
